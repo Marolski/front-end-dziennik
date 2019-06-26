@@ -1,0 +1,24 @@
+<div id="create-card">
+  <div class="first-data">
+      <input #place type="text" name="place" placeholder="place">
+      <input type="file" name="image" value="picture">
+  </div>
+  <div class="second-data">
+      <input #description type="text" name="description">
+      <input #date type="date" name="date-since">
+  </div>
+  <input type="submit" value="submit" (click)="addPlace(place.value,description.value,date.value)">
+</div>
+ <ul class="container-cards">
+   <li *ngFor="let card of cards">
+    <div class="profil-card">
+        <div class="card">
+          <img src="../../assets/images/images.png" alt="place-image" >
+          <div class="container">
+            <h4><b>{{card.place}}   </b>{{card.dataSince}}-{{card.dataTo}}</h4> 
+            <p>{{card.description}}</p> 
+          </div>
+        </div>
+      </div>
+   </li>
+ </ul>
